@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>leniwe brygady</title>
+</head>
+<body>
+	<input type="text" id="linia" style="width:60px;"> / <input type="text" id="brygada" style="width:60px;"><br>
+	<button onclick="czynaczas()" style="margin:5px;">Przejdź do rozkładu</button>
+	<script>
+	function czynaczas() {
+	  var l = document.getElementById("linia").value;
+	  var b = document.getElementById("brygada").value;
+	  window.open(`https://czynaczas.pl/poznan/rozklad-jazdy-brygady/linia/${l}/brygada/${b}`);
+	}
+	</script>
+</body>
+</html>
