@@ -1,17 +1,84 @@
-<html><head>
-    <title>vapersonbus</title>
-  </head>
-  <body>
-	<style>
-	#klak
-	{
-		text-align:center; 
-		font-size:40px; 
-		font-family: Arial, Helvetica, sans-serif;
-	}
-	</style>
-	<div id="klak">
-    <a href="gdzie-jest-klak.txt">Spis kąstali (stan na 2.09.2024)</a><br>
-    <a href="zjazdy-klakow.txt">Planowe zjazdy kąstali</a>
-	</div>
-</body></html>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <title>vaporeonpl.github.io</title>
+    <script>
+        var splashes = ["Będzie 2?", "Opóźnienie może ulec zmianie. Prosimy o zwracanie uwagi na komunikaty.", "Ce n'est pas un tramway.", "Litwo, ojczyzno moja...", "Tematyka kolejowo-tramwajowa przypadkowa.", "Cyyyk!"];
+        function knot() {
+            document.getElementById('knot').innerHTML=`${splashes[Math.floor(Math.random()*splashes.length)]}`;
+        }
+
+		function info(txt) {
+			switch(txt) {
+				case 105:
+					document.getElementById("texth").innerHTML = "Konstal 105N";
+					document.getElementById("main").innerHTML = "Był to tramwaj produkowany przez chorzowski Konstal w latach 1973-1979, później zastąpiony przez model 105Na. Jeździły one we wszystkich 14 (ówcześnie posiadających sieć tramwajową) miastach Polski. Znaczna większość wagonów tego typu została przebudowana później na podtyp 105Na lub zezłomowana. Od 2023 roku tramwaje typu 105Na kursują również po ukraińskim Konotopie.";
+					document.getElementById("side").innerHTML = "W 2015 roku otwarta została w Olsztynie najmłodsza, piętnasta sieć tramwajowa w Polsce. System ten jest wyjątkowy, ponieważ wszystkie tramwaje w Olsztynie są dwukierunkowe, ponadto nie ma tam pętli znanych z innych miast."
+					document.getElementById("foto").innerHTML = "Zdjęcie własne. Na zdjęciu przedstawiony jest poznański tramwaj typu 105N1 o numerze 82.";
+					document.getElementById("srodek").style.backgroundImage = "url('105n.jpg')";
+					break;
+				case 7:
+					document.getElementById("texth").innerHTML = "Pafawag 4E <b>(EU07)</b>";
+					document.getElementById("main").innerHTML = "Lokomotywa elektryczna wyprodukowana w liczbie 240 sztuk przez wrocławski Pafawag. Produkcja lokomotywy trwała od 1964 do 1972 roku. Zasadniczo były to licencyjne klony angielskiej lokomotywy AEI E (seria PKP EU06), która to z kolei była oparta o lokomotywę serii 83 Kolei Brytyjskich (ang. British Rail). Z wyprodukowanych 240 egzemplarzy kilkadziesiąt zachowało się do dziś, głównie wśród przewoźników towarowych. W latach 1983-1992 produkcję poprawionej wersji \"siódemki\" typu 303E kontynuowano w poznańskich zakładach im. Hipolita Cegielskiego.";
+					document.getElementById("side").innerHTML = "Na podstawie lokomotywy serii EU07 opracowano również dwuczłonową lokomotywę towarową ET41 i ekspresową EP08. Część lokomotyw z obu typów została później przebudowana na zwyczajne EU07."
+					document.getElementById("foto").innerHTML = "Zdjęcie własne. Na zdjęciu przedstawiona jest lokomotywa EU07-128 w historycznym malowaniu, pracująca dla PKP Cargo.";
+					document.getElementById("srodek").style.backgroundImage = "url('eu07.jpg')";
+					break;
+				case 52:
+					document.getElementById("texth").innerHTML = "BR 52 <b>(Ty2)</b>";
+					document.getElementById("main").innerHTML = "Parowóz produkcji niemieckiej, produkowany w trakcie II wojny światowej (stąd też przydomek \"Kriegslok\"). Ze względu na prostotę konstrukcji i stosunkowo niski koszt produkcji powstało 7794 lokomotyw tego typu, z czego ok. 1200 trafiło po wojnie do Polski. W naszym kraju wyprodukowano dodatkowe 150 lokomotyw tej serii, oznaczonych jako Ty42. Jest to jeden z najbardziej rozpowszechnionych parowozów na świecie.";
+					document.getElementById("side").innerHTML = "Firma Cobi produkuje zestawy klocków, z których można samodzielnie zbudować tytułowy parowóz. Mielecka fabryka dostarcza wariant zarówno eksploatowany w III&nbsp;Rzeszy, jak i później w Polsce, z odpowiadającymi im naklejkami."
+					document.getElementById("foto").innerHTML = "Zdjęcie: <a href=\"https://commons.wikimedia.org/wiki/File:Falkenberg_Bahnhof_Lok_BR_52-04.jpg\">Wikimedia Commons - Radler59.</a> Na zdjęciu przedstawiona jest lokomotywa serii 52, identyczna z polskimi Ty2.";
+					document.getElementById("srodek").style.backgroundImage = "url('ty2.jpg')";
+					break;
+				case 100:
+					document.getElementById("texth").innerHTML = "EL.100";
+					document.getElementById("main").innerHTML = "Sprowadzona z Wielkiej Brytanii lokomotywa elektryczna, jedna z pierwszych w międzywojennej Polsce. Początkowo kursowały one w warszawskim węźle kolejowym ze względu na raczkującą dopiero elektryfikację kolei. Po II wojnie światowej kursowały do 1964 roku, a ostatni egzemplarz został zezłomowany 4 lata później. Skradzione przez Niemców egzemplarze były eksploatowane do co najmniej 1952 roku. Najprawdopodobniej wszystkie egzemplarze zostały zezłomowane do końca lat 50.";
+					document.getElementById("side").innerHTML = "Pierwszym elektrycznym pojazdem kolejowym w II RP były wyprodukowane w 1927 roku, również angielskie, wagony motorowe serii EN80 eksploatowane przez Elektryczną&nbsp;Kolej&nbsp;Dojazdową (obecnie Warszawską&nbsp;Kolej&nbsp;Dojazdową) do lat 70. Ze względu na charakterystykę przedwojennej EKD wizualnie i funkcjonalnie jednak bardziej przypominają tramwaj."
+					document.getElementById("foto").innerHTML = "Zdjęcie: <a href=\"https://commons.wikimedia.org/wiki/File:SS_Lublin_wylad2.jpg\">Wikimedia Commons - ze zbiorów NAC.</a> Na zdjęciu przedstawiony jest rozładunek lokomotywy EL.102 w gdyńskim porcie.";
+					document.getElementById("srodek").style.backgroundImage = "url('el100.jpg')";
+					break;
+				case 1:
+					document.getElementById("texth").innerHTML = "Informacje o autorach";
+					document.getElementById("main").innerHTML = "Zdjęcia 105Na #98, 105N1 #82 i EU07-128 - tło i przyciski: Wiktor Czarnyszewicz<br>Zdjęcie Ty2 - tło: <a href=\"https://commons.wikimedia.org/wiki/File:Falkenberg_Bahnhof_Lok_BR_52-04.jpg\">Wikimedia Commons - Radler59</a><br>Zdjęcie Ty2 - przycisk: <a href=\"https://commons.wikimedia.org/wiki/File:52_4867_HEF_Hafenbahn_Frankfurt_21092008.JPG\">Wikimedia Commons - Urmelbeauftragter</a><br>Zdjęcie EL.100 - tło: <a href=\"https://commons.wikimedia.org/wiki/File:SS_Lublin_wylad2.jpg\">Wikimedia Commons - ze zbiorów NAC</a><br>Zdjęcie EL.100 - przycisk: <a href=\"https://commons.wikimedia.org/wiki/File:EL.103_(EP01).jpg\">Wikimedia Commons - ze zbiorów NAC</a><br>Informacje: wiedza własna, częściowo też Wikipedia<br>Autor strony: Wiktor Czarnyszewicz";
+					document.getElementById("side").innerHTML = "Pierwszym elektrycznym pojazdem kolejowym w II RP były wyprodukowane w 1927 roku, również angielskie, wagony motorowe serii EN80 eksploatowane przez Elektryczną&nbsp;Kolej&nbsp;Dojazdową (obecnie Warszawską&nbsp;Kolej&nbsp;Dojazdową) do lat 70. Ze względu na charakterystykę przedwojennej EKD wizualnie i funkcjonalnie jednak bardziej przypominają tramwaj."
+					document.getElementById("foto").innerHTML = "";
+					document.getElementById("srodek").style.backgroundImage = "url('klak.jpg')";
+					break;
+				default:
+					document.getElementById("texth").innerHTML = "Błąd";
+					document.getElementById("main").innerHTML = "W wyniku błędu nie jestem w stanie wyświetlić żadnego opisu."
+					document.getElementById("side").innerHTML = "Coś się popsuło."
+					document.getElementById("foto").innerHTML = "";
+					break;
+			}
+		}
+    </script>
+</head>
+<body onload="knot()">
+    <header class="baner">
+        <h1 class="nazwa">vaporeonpl.github.io</h1>
+		<h3 class="nazwa-sub">Terapia Kolejowa</h3>
+		<p class="splash" id="knot">missingno</p>
+    </header>
+    <main>
+        <section class="lewy">
+		<button onclick="info(105)" class="wybor"><img style="height: 66.8px; width:200px;" src="105n-button.jpg" alt="105N"></img></button><br>
+		<button onclick="info(7)" class="wybor"><img style="height: 66.8px; width:200px;" src="eu07-button.jpg" alt="EU07"></img></button><br>
+		<button onclick="info(52)" class="wybor"><img style="height: 66.8px; width:200px;" src="ty2-button.jpg" alt="Ty2"></img></button><br>
+		<button onclick="info(100)" class="wybor"><img style="height: 66.8px; width:200px;" src="el100-button.jpg" alt="EL.100"></img></button>
+		<button onclick="info(1)" class="wybor">Autorzy</button></section>
+        <section class="srodek" id="srodek">
+            <h1 style="text-align:center; text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff, 0.5px 0.5px #fff, -0.5px -0.5px #fff, 0.5px -0.5px #fff, -0.5px 0.5px #fff;" id="texth">Wybierz po lewej stronie tabor, o którym chcesz coś przeczytać.</h1><br>
+			<p class="maintext" id="main"></p>
+		</section>
+        <section class="prawy"><h2 style="color: white;">Ciekawostka tematyczna:</h2><br><p class="sidetext" id="side"></p></section>
+    </main>
+    <footer class="stupki">
+        <p>Autor strony: Wiktor Czarnyszewicz. <span id="foto"></span></p>
+    </footer>
+</body>
+</html>

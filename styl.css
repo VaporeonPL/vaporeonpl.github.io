@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    height: 100vh;
+}
+
+.wybor {
+	margin: 4px;
+	padding-top: 1px;
+	height: 73px;
+	width: 206px;
+}
+
+.baner {
+    background: linear-gradient(135deg, #2a2a72, #009ffd);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+.nazwa {
+    font-size: 2.5em;
+    font-family: "Courier New", monospace;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.nazwa-sub {
+    font-size: 1.2em;
+    color: #c4e0e5;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.splash {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1.5em;
+    color: yellow;
+    margin-top: 15px;
+    text-shadow: 1px 1px 0px #000;
+    animation: splash 0.4s alternate infinite;
+}
+
+@keyframes splash {
+    0% { transform: scale(0.9) rotate(-3deg); }
+    100% { transform: scale(1) rotate(3deg); }
+}
+
+.lewy, .prawy {
+    background-color: #1e3a5f;
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: inset -10px 0px 15px rgba(0, 0, 0, 0.5); 
+}
+
+.prawy {
+    box-shadow: inset 10px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.srodek {
+    background: url('klak.jpg') center/cover no-repeat;
+    flex: 3;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.maintext {
+	font-size: 19px;
+	font-family: "Verdana", serif;
+	text-align: center;
+	text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
+             0.5px 0.5px #fff, -0.5px -0.5px #fff, 0.5px -0.5px #fff, -0.5px 0.5px #fff;
+}
+
+.sidetext {
+	font-size: 12px;
+	font-family: "Verdana", serif;
+	color: white;
+}
+
+.link {
+    color: #ffeb3b;
+    font-size: 18px;
+    text-shadow: 1px 1px 3px #000;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+.link:hover {
+    color: #00e676;
+}
+
+.stupki {
+    background-color: #37474f;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    font-family: "Georgia", sans-serif;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.3);
+}
+.stupki p {
+    margin: 0;
+    font-size: 0.9em;
+}
