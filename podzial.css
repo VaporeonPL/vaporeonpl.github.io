@@ -1,0 +1,28 @@
+*{
+	font-family: "Consolas", sans-serif;
+}
+
+.baner {
+    background: hotpink;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.srodek{
+	background-color: aquamarine;
+    height: 640px;
+    width:100%;
+    float:left;
+}
+.stupki{
+    background-color: steelblue;
+    height: 100px;
+    color: darkblue;
+    padding: 20px;
+    display: flex;
+}
+.stupki p{
+	font-family: "Georgia", sans-serif;
+	text-align: center;
+}	
