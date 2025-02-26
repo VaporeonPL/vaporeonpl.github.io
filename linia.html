@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="linia.css">
+    <title>vapersonbus</title>
+</head>
+<body>
+    <header>
+	<h1>Asystent w wybieraniu celu do knocenia</h1>
+	<p>jeśli nie masz pomysłu...</p>
+	</header>
+    <main>
+		<p style='font-size: 24px;'>Twoja wybrana linia to: <span id='line' style='font-size: 33px; text-weight: bold; color: maroon;'>wylosuj!</span> przewoźnika <span id='op' style='font-size: 33px; text-weight: bold; color: maroon;'>wylosuj!</span></p><br>
+		<p style='font-size: 24px;'>Twój cel na tej linii to: <span id='goals' style='font-size: 33px; text-weight: bold; color: maroon;'>wylosuj!</span></p><br>
+		<button onclick='gen()' class='gen'>WYLOSUJ<br><span style='font-size: 15px; color: maroon;'><span id='rolls'>0</span> losów</span></button><br><br>
+		<h4>Instrukcja obsługi: po prostu kliknij wielki przycisk na górze.</h4><br><br>
+		<p>Zasady zabawy:</p>
+		<ul><li>- wylosowane zadania wykonaj w jeden dzień</li>
+		<li>- jeżeli danego zadania nie da się wykonać, wylosuj nowe</li>
+		<li>- kolejność nie ma znaczenia</li>
+		<li>- zalecam max. 5 losów, generowane wyniki są totalnie losowe i mogą wymagać przelotów po całej aglomeracji</li></ul><br>
+		<p>Wylosowane dotąd wyniki:</p><br>
+		<textarea id='area' style='height: 100px; width: 800px;'></textarea>
+    </main>
+    <footer>
+        <p>Opracowanie i montaż: VAPERSONBUS. Wszystkie lewa zastrzeżone.<br>Autor nie ponosi odpowiedzialności za poprawność treści wylosowanych przez algorytm.</p>
+    </footer>
+	<script>
+	let op = ['Translub', 'PUK Komorniki', 'TPBUS', 'Rokbus', 'ZKP Suchy Las', 'Transkom', 'SPK Swarzędz', 'ZK Kleszczewo', 'Kombus'];
+	let lines = [['602', '603', '610', '611', '614', '616', '651', '690'], 
+				 ['701', '702', '703', '704', '705', '707', '710', '715', '716', '729', '789'], 
+				 ['801', '802', '803', '804', '811', '812', '813', '821', '825', '826', '881', '882', '889'], 
+				 ['832', '833', '834', '835', '836', '837', '891', '893'], 
+				 ['901', '902', '904', '905', '907'], 
+				 ['312', '320', '321', '323', '341', '342', '388', '392', '394', '396', '397'], 
+				 ['401', '405', '406', '407', '412', '484', '485', '486', '490', '491', '492', '493', '494', '495', '497', '498', '499'],
+				 ['431', '432', '433'],
+				 ['501', '502', '503', '511', '512', '527', '560', '561']];
+
+	let goals = ['złapać autobus tej linii', 'złapać autobus tej linii w 3 różnych miejscach', 'złapać autobus tej linii o wschodzie/zachodzie słońca', 'złapać autobus tej linii, gdy mija się z innym autobusem', 'znaleźć unikatowy kadr na tej linii', 'znaleźć co najmniej 2 unikatowe kadry na tej linii w różnych miejscach', 'złapać autobus na zakręcie lub skrzyżowaniu', 'znaleźć motyw sakralny na tej linii', 'znaleźć motyw drogi na tej linii', 'znaleźć motyw z architekturą na tej linii'];
+	var rolls = 0;
+	
+	function rng(x) {
+		return Math.floor(Math.random() * x);
+	}
+	
+	function today() {
+		const today = new Date();
+		const yyyy = today.getFullYear();
+		let mm = today.getMonth() + 1;
+		let dd = today.getDate();
+
+		if (dd < 10) dd = '0' + dd;
+		if (mm < 10) mm = '0' + mm;
+
+		return dd + '.' + mm + '.' + yyyy;
+	}
+
+	function gen() {
+		let ch_op_index = rng(op.length);
+		let ch_op = op[ch_op_index];
+		let ch_line = lines[ch_op_index][rng(lines[ch_op_index].length)];
+		let ch_goal = goals[rng(goals.length)]
+		rolls++;
+		document.getElementById('line').innerHTML = ch_line;
+		document.getElementById('op').innerHTML = ch_op;
+		document.getElementById('goals').innerHTML = ch_goal;
+		document.getElementById('area').innerHTML = document.getElementById('area').innerHTML+`${rolls}. ${today()} | ${ch_line} (${ch_op}) - ${ch_goal}`+String.fromCharCode(13, 10);
+		document.getElementById('rolls').innerHTML = rolls;
+	}
+	</script>
+</body>
+</html>
